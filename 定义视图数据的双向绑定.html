@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="test">
+    <button onclick="clickBtn()">点击</button>
+    <script>
+        // 数据
+        const data = {}
+        // 视图
+        const input = document.getElementById('test')
+        // 绑定
+        Object.defineProperty(data, 'name', {
+            enumerable: true,
+            get: function () {
+                return input.value
+            },
+            set: function (newName) {
+                input.value = newName
+            }
+        })
+        // 监听input值变化，修改data.name
+        input.oninput = function (event) {
+            data.name = event.target.value
+        }
+        const clickBtn = () => {
+            console.log(data.name);
+        }
+    </script>
+</body>
+</html>
