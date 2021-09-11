@@ -6,9 +6,9 @@ const data1 = {
 
 const data2 = ['a', 'b', 'c']
 
-const proxyData = new Proxy(data1, {
+const proxyData = new Proxy(data2, {
     get(target, key, receiver) {
-        const ownKeys = Object.ownKeys(target)
+        const ownKeys = Reflect.ownKeys(target)
         if (ownKeys.includes(key)) {
             // 处理监听
         }
@@ -28,6 +28,13 @@ const proxyData = new Proxy(data1, {
 })
 
 
-console.log(proxyData.age);
-proxyData.age = 30
-console.log(proxyData.age);
+// console.log(proxyData.age);
+// proxyData.age = 30
+// console.log(proxyData.age);
+// proxyData.test = 123
+// console.log(proxyData.test);
+// console.log(proxyData.name);
+// delete proxyData.name
+// console.log(proxyData.name);
+proxyData.push('d')
+console.log(proxyData); // get:push get:length set: d  set: length
