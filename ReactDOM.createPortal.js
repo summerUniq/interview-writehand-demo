@@ -11,3 +11,6 @@ class Portals extends React.Component {
 }
 
 export default Portals
+
+
+// 使用 <Portals>我是子组件</Portals>
