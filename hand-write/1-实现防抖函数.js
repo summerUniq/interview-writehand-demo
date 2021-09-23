@@ -7,7 +7,7 @@ function debounce(fnc, wait) {
             clearTimeout(timer)
         }
         timer = setTimeout(() => {
-            fnc.apply(this, [...arguments])
+            fnc.apply(this, arguments)
         }, wait)
     }
 }
