@@ -1,4 +1,11 @@
 // 循环终止条件是： 隐式原型不存在
+/**
+ * 判断左边实例是否在右边原型上
+ * 终止条件： 左侧沿着原型链往上查找，一直到null
+ * @param {*} example 
+ * @param {*} classFunc 
+ * @returns 
+ */
 
 function instanceOf(example, classFunc) {
     let proto = example._proto_;
